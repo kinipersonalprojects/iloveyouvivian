@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+*, button, input {
+    border: 0;
+    background: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+body {
+    animation: fadein 2s
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    gap: 25px;
+}
+
+.text {
+    text-align: center;
+    margin: 0 15vw;
+}
+
+@media (min-width: 500px) {
+    .text {
+        margin: 0 25vw;
+    }
+}
+
+.pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: grey;
+    object-fit: cover;
+    transition: 1s;
+}
+
+.next-btn > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 17px;
+}
+
+.next-btn {
+    cursor: pointer;
+    background-color: rgb(255, 0, 64);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+.next-btn::before {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 140px;
+    background-color: rgb(177, 15, 56);
+    animation: wave 5s infinite linear;
+    transition: all 0.5s ease-in-out;
+    top: 30px
+  }
+
+.next-btn:hover::before {
+    top: 0px
+}
+
+.b-button > a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+  @keyframes wave {
+    0% {
+        transform: translate(-50%) rotate(-180deg);
+        
+    }
+      
+      
+    100% {
+        transform: translate(-50%) rotate(360deg);
+    }
+  }
